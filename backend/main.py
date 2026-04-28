@@ -12,6 +12,7 @@ import numpy as np
 from dotenv import load_dotenv
 from pydantic import BaseModel as PydanticBase
 from PIL import Image
+from fastapi.staticfiles import StaticFiles
 
 load_dotenv()
 
@@ -21,9 +22,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001", "https://vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
