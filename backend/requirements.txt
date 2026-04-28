@@ -10,4 +10,4 @@ librosa
 requests
 yt-dlp
 google-search-results
-Pillow--only-binary=:all:
+Pillow --only-binary=:all:
