@@ -1,14 +1,13 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-sqlalchemy==2.0.23
-python-dotenv==1.0.0
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
 psycopg2-binary
-numpy==1.26.2
-scikit-image==0.22.0
-moviepy==1.0.3
-librosa==0.10.1
-requests==2.31.0
-yt-dlp==2023.12.30
+numpy
+scikit-image
+moviepy
+librosa
+requests
+yt-dlp
 google-search-results
-Pillow==10.0.1 --only-binary=:all:
-setuptools<70
+Pillow--only-binary=:all:
