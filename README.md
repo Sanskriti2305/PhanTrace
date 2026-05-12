@@ -1,25 +1,86 @@
+<div align="center">
+
 # 🛡️ PhanTrace
+
 ### AI-Powered Digital Asset Protection for Sports Media
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blueviolet?style=for-the-badge&logo=vercel)](https://phantrace-05.vercel.app/)
 
 > *"Because stolen content doesn't announce itself."*
 
 PhanTrace fingerprints official sports media and autonomously hunts unauthorized copies across platforms — alerting rights holders in real time before the damage is done.
 
+</div>
+
 ---
 
-## 🏗️ Project Architecture
+## 📌 Table of Contents
+
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Architecture](#-project-architecture)
+- [Getting Started](#-getting-started)
+- [Usage](#-usage)
+
+---
+
+## 🔍 Overview
+
+Sports media — match highlights, broadcast clips, player footage — is stolen and redistributed every day without authorization. PhanTrace is an end-to-end AI platform that:
+
+- **Fingerprints** your official content using visual (pHash) and audio (Chromaprint) signatures
+- **Hunts** for unauthorized copies across YouTube, Reddit, Twitter/X, and more
+- **Alerts** rights holders in real time via WebSocket notifications
+- **Acts** with one-click DMCA notice generation and strike commands
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| 🧬 Content DNA Studio | Upload and fingerprint your media assets |
+| 🗺️ War Room Threat Map | Live dashboard of active infringements worldwide |
+| 🔒 Evidence Locker | Browse and filter all detected unauthorized copies |
+| ⚡ Strike Command | Trigger DMCA takedowns directly from the platform |
+| 🔔 Real-Time Alerts | WebSocket-powered instant notifications |
+| 🤖 Auto-Tagging | AI-powered sport, team, and event classification |
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- [Next.js](https://nextjs.org/) — React framework
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+
+**Backend**
+- [FastAPI](https://fastapi.tiangolo.com/) — High-performance Python API
+- [PostgreSQL](https://www.postgresql.org/) — Relational database
+- WebSockets — Real-time alert delivery
+
+**ML / AI**
+- [pHash](http://phash.org/) — Perceptual visual fingerprinting
+- [Chromaprint](https://acoustid.org/chromaprint) — Audio fingerprinting
+- [FAISS](https://faiss.ai/) — Vector similarity search
+
+**Scrapers**
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) — YouTube
+- [PRAW](https://praw.readthedocs.io/) — Reddit
+- Twitter/X scraper
+
+**Deployment**
+- [Vercel](https://vercel.com/) — Frontend hosting
+- [Railway](https://railway.app/) — Backend hosting
+
+---
+
+## 🏗 Project Architecture
 
 ```
 phantrace/
-├── frontend/          # Next.js + Tailwind CSS
-├── backend/           # Python + FastAPI
-├── ml/                # Fingerprinting + Matching engine
-└── README.md
-```
-```
-phantrace/                          ← ROOT
-│
-├── frontend/                       
+├── Frontend/               # Next.js + Tailwind CSS
 │   ├── app/
 │   │   ├── page.jsx                → Landing / Upload page
 │   │   ├── dashboard/page.jsx      → War Room
@@ -33,62 +94,77 @@ phantrace/                          ← ROOT
 │   └── lib/
 │       └── api.js
 │
-├── backend/                        ← FastAPI 
-├── ml/                             ← Fingerprinting 
+├── Backend/                # FastAPI + PostgreSQL
+│
+├── ML/                     # Fingerprinting & Matching Engine
+│
 └── README.md
 ```
 
 ---
 
-## ✅ Progress Tracker
+## 🚀 Getting Started
 
-### 🎨 Frontend
+### Prerequisites
 
-- [x] Landing Page
-- [X] Upload Page (Content DNA Studio)
-- [x] Dashboard Page (War Room Threat Map)
-- [x] Detections Page (Evidence Locker)
-- [x] Detection Detail Page
-- [x] Strike Command Page
+- Node.js 18+
+- Python 3.10+
+- PostgreSQL
 
----
+### 1. Clone the Repository
 
-### ⚙️ Backend
+```bash
+git clone https://github.com/Sanskriti2305/PhanTrace.git
+cd PhanTrace
+```
 
-- [x] Project setup (FastAPI + PostgreSQL)
-- [x] Content upload API endpoint
-- [x] Fingerprint generation endpoint
-- [ ] Detection query endpoints
-- [ ] WebSocket for real-time alerts
-- [ ] DMCA notice generator endpoint
+### 2. Frontend Setup
 
----
+```bash
+cd Frontend
+npm install
+npm run dev
+```
 
-### 🤖 ML / AI
+### 3. Backend Setup
 
-- [ ] pHash visual fingerprinting engine
-- [ ] Audio fingerprinting (Chromaprint)
-- [ ] FAISS vector DB setup + similarity search
-- [ ] Auto-tagging (sport, team, event)
+```bash
+cd Backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
----
+### 4. ML Engine Setup
 
-### 🕷️ Scraping
+```bash
+cd ML
+pip install -r requirements.txt
+```
 
-- [ ] YouTube scraper (yt-dlp)
-- [ ] Reddit scraper (PRAW)
-- [ ] Twitter/X scraper
-- [ ] Match + alert pipeline
+### 5. Environment Variables
 
----
+Create a `.env` file in the `Backend/` directory:
 
-### 🚀 Final
-
-- [ ] Connect frontend to backend
-- [ ] Seed demo data for pitch
-- [ ] Deploy (Vercel + Railway)
-- [ ] Pitch deck ready
+```env
+DATABASE_URL=postgresql://user:password@localhost:5432/phantrace
+SECRET_KEY=your_secret_key
+```
 
 ---
 
-*Built for Google Solutions Challenge 2026*
+## 💡 Usage
+
+1. **Upload** your official media on the Content DNA Studio page
+2. PhanTrace generates a unique **fingerprint** for your content
+3. The **scraper pipeline** monitors platforms for matching content
+4. View active infringements on the **War Room** dashboard
+5. Browse evidence in the **Evidence Locker**
+6. Issue takedowns via the **Strike Command** panel
+
+---
+
+<div align="center">
+
+
+
+</div>
